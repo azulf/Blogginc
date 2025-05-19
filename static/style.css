@@ -1,0 +1,123 @@
+html
+{
+    height: 100%;
+    margin : 0%;
+    padding : 0%;
+}
+
+body 
+{
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    display : flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100vh;
+    background: #f9f9f9;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 90vh;
+    padding-top: 2em;
+    padding-bottom: 4em; /* agar tidak tertutup footer */
+}
+
+.container 
+{ 
+    max-width: 420px;      /* lebih ramping */
+    width: 100%;
+    padding: 1.5em 2em;
+    border-radius: 8px;
+    flex: 1 0 auto;
+    margin-left: auto;      /* dorong ke kanan */
+    margin-right: 1em;      /* beri jarak dari tepi kanan */
+    align-self: flex-start; /* pastikan rata atas */
+}
+
+.branding {
+    min-width: 220px;
+    padding: 2em 1em 2em 2em;
+}
+
+.main-nav ul 
+{
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.main-nav li
+{
+    display : inline;
+    margin-right: 1em;
+}
+
+.main-nav a 
+{
+    text-decoration: none; 
+    color: #333; 
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+h1
+{
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+p
+{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+footer
+{
+    width: 100%;
+    background: rgba(128, 128, 128, 0.7);
+    color: #fff;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.article
+{
+    border-bottom: 1px solid #ddd; margin-bottom: 1em; padding-bottom: 1em;
+}
+
+.admin-bar
+{ 
+    background: #eee; padding: 1em; margin-bottom: 1em; border-radius: 5px; 
+}
+
+form 
+{ 
+    margin-top: 2em; 
+}
+       
+input, textarea 
+{ 
+    width: 100%; padding: 0.5em; margin-bottom: 1em; 
+}
+        
+button 
+{ 
+    padding: 0.5em 1em; background: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer; 
+}

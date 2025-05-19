@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel ="stylesheet" href="{{ url_for('static', filename='admin-style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin-style.css') }}">
+</head>
+
+<body>
+    <h1>Dashboard Panel Admin</h1>
+    <h2>Laman untuk mengedit, menambahkan, dan menghapus artikel</h2>
+    <nav>
+        <ul>
+            <div class = "admin-nav">
+                <form action = "{{ url_for('home') }}">
+                    <button type="submit" class= "home-btn">Home</button>
+                </form>
+                <form action="{{ url_for('logout') }}">
+                    <button type="submit" class= "logout-btn">Logout</button>
+                </form>
+                <form action="{{ url_for('add') }}">
+                    <button type="submit" class= "add-btn"> + Add</button>
+                </form>
+            </div>
+        </ul>
+    </nav>
+    <!-- List of Articles -->
+    <h3>Articles</h3>
+    <ul>
+        <div class="articles-wrapper">
+            {% for article in articles %}
+            <div class = "article-list-container">
+                <li>
+                    <h4>{{ article.title }}</h4>
+                    <div class = "article-info">
+                        <p> {{ article.content }}</p>
+                    </div>
+                    <div class = "article-actions">
+                        <form action="{{ url_for('edit', article_id=article.id) }}" >
+                            <button type="submit" class="edit-btn">Edit</button>
+                        </form>
+
+                        <form action="{{ url_for('view', article_id=article.id) }}" >
+                            <button type="submit" class="view-btn">View</button>
+                        </form>
+
+                        <form action="{{ url_for('delete') }}" method="post"">
+                            <input type="hidden" name="article_id" value="{{ article.id }}">
+                            <button type="submit" class="delete-btn" onclick="return confirm('Delete this article?')">Delete</button>
+                        </form>
+                    </div>
+                </li>
+            </div>
+            {% endfor %}
+        </div>
+    </ul>
+</body>

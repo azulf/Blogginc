@@ -1,0 +1,111 @@
+html
+{
+    height: 100%;
+    margin : 0%;
+    padding : 0%;
+}
+
+body 
+{
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    display : flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: auto;
+    background: #f9f9f9;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 90vh;
+    padding-top: auto;
+    padding-bottom: auto; /* agar tidak tertutup footer */
+}
+
+.branding {
+    min-width: 100px;
+    padding: 0.5em 0 1em 1em;
+}
+
+.branding p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.main-nav ul 
+{
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.main-nav li
+{
+    display : inline;
+    margin-right: 1em;
+}
+
+.main-nav a 
+{
+    text-decoration: none; 
+    color: #333; 
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.container 
+{ 
+    max-width: 420px;      /* lebih ramping */
+    width: 100%;
+    padding: 1.5em 2em;
+    border-radius: 8px;
+    margin-left: auto;      /* dorong ke kanan */
+    margin-right: 1em;      /* beri jarak dari tepi kanan */
+    align-self: flex-start; /* pastikan rata atas */     
+}
+
+.container_add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    margin: auto;
+    padding: 30px 25px;
+    background: #ffffff56;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    margin-left: 4em;      /* dorong ke kanan */
+}
+
+.container_add h1
+{   
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: auto;
+}
+
+footer
+{
+    width: 100%;
+    background: rgba(128, 128, 128, 0.7);
+    color: #fff;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}

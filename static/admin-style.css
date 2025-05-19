@@ -1,0 +1,121 @@
+.edit-btn,
+.view-btn,
+.delete-btn {
+    display: inline-block;
+    margin-right: 0.5em;    /* jarak antar tombol */
+    margin-bottom: 0;       /* hilangkan jarak vertikal */
+    width: 90px;            /* opsional: lebar seragam */
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    color: #fff;
+}
+
+.article-actions {
+    display: flex;
+    justify-content: flex-start; /* tombol di sebelah kiri */
+    margin-top: 1em;           /* jarak atas */
+}
+
+
+/* Tombol navigasi admin */
+.admin-nav {
+    display: flex;
+    margin-right: 2em ;  
+    margin-top: 1em;      
+    justify-content:center;;
+}
+
+
+.edit-btn { background: #f39c12; }
+.view-btn { background: #3498db; }
+.delete-btn { background: #e74c3c; }
+
+.home-btn,
+.logout-btn,
+.add-btn {
+    display: inline-block;
+    margin-right: 1em;       /* hilangkan jarak vertikal */
+    width:90px;            /* opsional: lebar seragam */
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    color: #2a232d;
+}
+
+h1
+{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2
+{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3
+{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start; /* tombol di sebelah kiri */
+    margin-top: 1em;           /* jarak atas */
+    margin-left :4em
+}
+
+h4
+{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start; /* tombol di sebelah kiri */
+    margin-top: 1em;           /* jarak atas */
+}
+
+.article-info
+{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: flex-start;
+    
+}
+
+/* Container untuk menampung list content */
+.article-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    margin: 20px 10px; /* jarak antar kontent, horizontal dan vertikal */
+    padding: 30px 25px;
+    background: #ffffff56;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.articles-wrapper {
+    display :flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}

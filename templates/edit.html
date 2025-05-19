@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Article</title>
+</head>
+<body>
+    <h1>Edit Article</h1>
+    <form method="post" action="{{ url_for('edit', article_id=article.id) }}">
+        <input type="hidden" name="article_id" value="{{ article.id }}">
+        <input type="text" name="title" value="{{ article.title }}">
+        <textarea name="content">{{ article.content }}</textarea>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
