@@ -1,9 +1,15 @@
 # flask for blog
 from flask import Flask, render_template, request, redirect, url_for
 import fileManager
-import uuid
+from flask_cors import CORS
+import requests
+from flask import jsonify
 
 app = Flask(__name__)
+CORS(app) # Enable CORS for all routes
+
+# API URL
+API_URL = "http://localhost:5002/weather"
 
 # Define the route for the home page
 @app.route('/', methods=['GET'])
@@ -95,6 +101,26 @@ def view(article_id):
 def admin():    
     articles = fileManager.load_all_articles()
     return render_template('admin.html', articles=articles)
+
+@app.route('/weather', methods=['GET'])
+def weather():
+    city = request.args.get('city')
+    if city:
+        try : 
+            res = requests.get(API_URL, params={'city': city})
+        except requests.exceptions.RequestException as e:
+            return render_template('weather.html', error="Koneksi ke API gagal")
+        
+        if res.status_code == 200:
+            weather_data = res.json()
+            return render_template('weather.html', weather_data=weather_data)
+        else:
+            weather_data = res.json()
+            return render_template(jsonify(weather_data), status_code=res.status_code)
+           
+    else:
+        return render_template('weather.html', error ="Kota tidak ditemukan")
+
 
 
 if __name__ == '__main__':

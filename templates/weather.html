@@ -24,13 +24,23 @@
         </nav>   
     </div>
 
-    <div class ="api-container">
-        <h2> Weather forecast </h2>
-        <nav class = "weather-nav">
-            <ul>
-                <li><a href="{{ url_for('weather') }}">Weather</a></li>
-            </ul>
-        </nav>
+    <form action ="/weather" method = "GET">
+        <label for="city">Enter city name:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <div class="api-container">
+        <h2>Weather Forecast</h2>
+        {% if weather_data %}
+            <p>City: {{ weather_data.city }}</p>
+            <p>Temperature: {{ weather_data.temperature }}°C</p>
+            <p>Condition: {{ weather_data.condition }}</p>
+        {% else %}
+            <p>No weather data available.</p>
+            <p>{{ error }}</p>
+        {% endif %}
+
     </div>
 
     <footer>
